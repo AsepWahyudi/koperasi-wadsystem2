@@ -1,0 +1,79 @@
+//PAGE HEADER
+//================================================
+$height-page-header: 50px;
+
+//CONTENT
+//================================================
+$width-content-padding:30px;
+$height-content-header:40px;
+$width-content-padding-mobil:10px;
+
+//LEFT SIDEBAR
+//================================================
+$width-left-sidebar-open:220px;
+$width-left-sidebar-collapsed:60px;
+$height-left-sidebar-header:$height-content-header;
+
+// SIMPLE Navigation
+$width-nav-p-tb:12px;
+$width-nav-p-lr:20px;
+$width-padding-nav-level-0: ($width-nav-p-tb $width-nav-p-lr);
+$width-padding-nav-level-1: ($width-nav-p-tb - 2px $width-nav-p-lr + 5px);
+$width-padding-nav-level-2: ($width-nav-p-tb - 4px $width-nav-p-lr + 25px);
+$width-padding-nav-level-3: ($width-nav-p-tb - 6px $width-nav-p-lr + 45px);
+
+
+// // LEFT-LINES Navigation
+$width-p-nav-left-lines-level-1: ($width-nav-p-tb - 2px $width-nav-p-lr + 30px);
+$width-p-nav-left-lines-level-2: ($width-nav-p-tb - 4px $width-nav-p-lr + 50px);
+$width-p-nav-left-lines-level-3: ($width-nav-p-tb - 6px $width-nav-p-lr + 70px);
+
+
+//RIGHT SIDEBAR
+//================================================
+$width-right-sidebar-opened:240px;
+
+
+//GENERALS
+//================================================
+
+// MEASURES
+$increment: 5px;
+$measure-xs: $increment;
+$measure-sm: $measure-xs + $increment;
+$measure-md: $measure-sm + $increment;
+$measure-lg: $measure-md + $increment;
+$measure-xl: $measure-lg + $increment;
+$measure-xlg: $measure-xl + $increment;
+
+// THIN MEASURE
+$thin-increment:1px;
+$thin-measure-xs: $thin-increment;
+$thin-measure-sm: $thin-measure-xs + $thin-increment;
+$thin-measure-md: $thin-measure-sm + $thin-increment;
+$thin-measure-lg: $thin-measure-md + $thin-increment;
+$thin-measure-xl: $thin-measure-lg + $thin-increment;
+$thin-measure-xlg: $thin-measure-xl + $thin-increment; 
+
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// SIZES LISTS
+//================================================
+
+$measure-list: 
+(none 0)
+(xs $measure-xs)
+(sm $measure-sm)
+(md $measure-md)
+(lg $measure-lg)
+(xl $measure-xl)
+(xlg $measure-xlg);
+
+$thin-measure-list: 
+(none 0)
+(xs $thin-measure-xs)
+(sm $thin-measure-sm)
+(md $thin-measure-md)
+(lg $thin-measure-lg)
+(xl $thin-measure-xl)
+(xlg $thin-measure-xlg);

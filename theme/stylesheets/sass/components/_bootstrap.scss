@@ -1,0 +1,27 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* BOOTSTRAP OVERWRITE*/
+/*================================================*/
+.pagination > .active > {
+    a,
+    span,
+    a:hover,
+    span:hover,
+    a:focus,
+    span:focus {
+        background: $color-primary;
+        border-color: $color-primary;
+    }
+}
+
+.pagination > li > {
+    a,
+    span {
+        color: $color-primary;
+    }
+    a:hover,
+    span:hover,
+    a:focus,
+    span:focus {
+        color: $color-primary-darker-1;
+    }
+}

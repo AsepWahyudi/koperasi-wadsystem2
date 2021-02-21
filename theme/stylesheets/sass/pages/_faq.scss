@@ -1,0 +1,25 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* PAGES - FAQ*/
+/*================================================*/
+.faq-accordion {
+    .panel {
+        border-radius: 0px;
+        margin: 0px;
+        .panel-header,
+        .panel-footer {
+            border-radius: 0px;
+        }
+        .panel-header {
+            .panel-title {
+                font-weight: normal;
+                @include font-size(14);
+                @include line-height(20);
+                padding: 8px 12px;
+            }
+        }
+        .panel-content {
+            margin: 15px 20px;
+            background: $color-scale-0;
+        }
+    }
+}

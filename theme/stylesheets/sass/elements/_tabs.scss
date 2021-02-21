@@ -1,0 +1,86 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* TABS*/
+/*================================================*/
+.tabs {
+    background: $color-scale-0;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    .nav-tabs {
+        > li {
+            > a {
+                border-radius: 0px;
+            }
+            &.active {
+                a {
+                    border-top: 2px solid $color-primary;
+                }
+            }
+        }
+        &.nav-justified {
+            >li.active a {
+                border-top: 2px solid $color-primary;
+            }
+        }
+    }
+    .tab-content {
+        background: #ffffff;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-top: 0px;
+    }
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    // VERTICAL TABS
+    //================================================
+    &.tabs-vertical {
+        .nav-tabs {
+            border: 0px;
+            >li {
+                float: none;
+                margin-bottom: 0px;
+                &:last-child {
+                    a {
+                        border-bottom: 0px;
+                    }
+                }
+            }
+        }
+        .tab-content {
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+        // LEFT TABS
+        //================================================
+        &.tabs-left {
+            .nav-tabs {
+                float: left;
+                li {
+                    margin-right: -3px;
+                    &.active {
+                        a {
+                            border: 1px solid #ddd;
+                            border-right-color: transparent;
+                            border-left: 2px solid $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+        // RIGHT TABS
+        //================================================
+        &.tabs-right {
+            .nav-tabs {
+                float: right;
+                li {
+                    margin-left: -3px;
+                    &.active {
+                        a {
+                            border: 1px solid #ddd;
+                            border-left-color: transparent;
+                            border-right: 2px solid $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+
+//BASIC COLORS
+//================================================
+$color-dark:#000000;
+$color-light:#ffffff;
+$color-muted:#999999;
+$color-trans:rgba(255, 255, 255, 0.4);
+
+
+//STATES COLORS
+//================================================
+$color-success: #88b93c;
+$color-success-inverse: #FFF;
+
+$color-warning: #fea223;
+$color-warning-inverse: #FFF;
+
+$color-danger: #d2322d;
+$color-danger-inverse: #FFF;
+
+$color-info: #5bc0de;
+$color-info-inverse: #FFF;
+
+// GREY SCALE
+//================================================
+$color-scale-0:#f7f7f7;
+$color-scale-1:#ececec;
+$color-scale-2:#cccccc;
+$color-scale-3:#999999;
+$color-scale-4:#585858;
+$color-scale-5:#202020;
+$color-scale-6:#151515;
+
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// COLORS LISTS
+//================================================
+
+// PRIMARY colors list
+$primary-colors-list: 
+(lighter-1 $color-primary-lighter-1 $color-primary-lighter-1-inverse) 
+(lighter-2 $color-primary-lighter-2 $color-primary-lighter-2-inverse) 
+(primary $color-primary $color-primary-inverse)
+(darker-1 $color-primary-darker-1 $color-primary-darker-1-inverse)
+(darker-2 $color-primary-darker-2 $color-primary-darker-2-inverse);
+
+// STATES colors list
+ $states-colors-list: 
+ (success $color-success $color-success-inverse) 
+ (warning $color-warning $color-warning-inverse) 
+ (danger $color-danger $color-danger-inverse) 
+ (info $color-info $color-info-inverse);
+
+ // SCALE colors list
+$scale-colors-list:
+(scale-0 $color-scale-0) 
+(scale-1 $color-scale-1) 
+(scale-2 $color-scale-2) 
+(scale-3 $color-scale-3)  
+(scale-4 $color-scale-4)
+(scale-5 $color-scale-5)
+(scale-6 $color-scale-6);
+ 
+// LIGHT-DARK colors list
+$light-dark-colors-list:
+(dark $color-dark) 
+(muted $color-muted)
+(light $color-light);
+ 

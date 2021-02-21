@@ -1,0 +1,18 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* COMPONENTS - SELECT2*/
+/*================================================*/
+
+//Tags colors
+//================================================
+@each $state in $states-colors-list {
+    .select-tag-#{nth($state,1)} + span {
+        .select2-selection__choice {
+            background: #{nth($state,2)} !important;
+            color: #{nth($state,3)} !important;
+        }
+    }
+}
+// Remove tag color
+.select2-selection__choice__remove {
+    color: #ccc !important;
+}

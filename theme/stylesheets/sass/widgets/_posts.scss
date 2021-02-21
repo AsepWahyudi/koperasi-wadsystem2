@@ -1,0 +1,38 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* WIDGETS - POSTS*/
+/*================================================*/
+.widget-post {
+    .panel-header {
+        position: relative;
+        padding: 0px;
+        img {
+            width: 100%;
+        }
+        .main-tag {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: -8px;
+            span {
+                background-color: $color-scale-0;
+                padding: 4px 10px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                font-size: 10px;
+                letter-spacing: 3px;
+                font-weight: bold;
+            }
+        }
+        .group-tag {
+            position: absolute;
+            bottom: 8px;
+            padding-left: 5px;
+            .badge {
+                letter-spacing: 2px;
+                border-radius: 3px;
+                background-color: $color-scale-5;
+                color: $color-light;
+            }   
+        }
+    }
+}

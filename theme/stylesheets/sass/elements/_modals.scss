@@ -1,0 +1,56 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* MODALS*/
+/*================================================*/
+.modal {
+    .modal-content {
+        .modal-header {
+            &.state {
+                padding: 10px 15px;
+                i {
+                    margin-right: 10px;
+                    border: 1px solid #fff;
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    line-height: 30px;
+                }
+            }
+            // STATES colors
+            @each $state in $states-colors-list {
+                &.modal-#{nth($state,1)} {
+                    background: #{nth($state,2)};
+                    color: #{nth($state,3)};
+                }
+            }
+            // PRIMARY color
+            &.modal-primary {
+                background: $color-primary;
+                color: $color-primary-inverse;
+            }
+        }
+        .modal-footer {
+            padding: 10px 15px;
+            .btn {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+// compatibility bootstrap modal - animate.css 
+body.modal-open {
+    .animated {
+        animation-fill-mode: initial;
+    }
+    .row.animated {
+        -webkit-animation: none;
+    }
+}
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+@media (min-width: 768px) {
+    .modal-dialog {
+        margin: 15% auto;
+    }
+}

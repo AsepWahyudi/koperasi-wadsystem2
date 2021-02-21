@@ -1,0 +1,122 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+
+/* WIDGETS - LISTS*/
+
+
+/*================================================*/
+
+.widget-list {
+    position: relative;
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    // TO DO LIST
+    //================================================
+    &.list-to-do {
+        .add-item {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            box-shadow: 2px 2px 1px $color-light !important;
+        }
+        .list-title {
+            padding: 12px 10px;
+            margin: 0;
+        }
+        ul {
+            li {
+                padding: 8px 10px;
+                &:nth-child(odd) {
+                    background: $color-scale-0;
+                }
+                input[type="checkbox"] {
+                    &:checked {
+                        & + label {
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+            }
+            label {
+                margin-bottom: 0px;
+            }
+        }
+    }
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    // LEFT ELEMENT LIST
+    //================================================
+    &.list-left-element {
+        li {
+            background: $color-scale-0;
+            margin-bottom: 3px;
+            &:last-child {
+                margin-bottom: 0px;
+            }
+            &:hover {
+                background: $color-scale-1;
+            }
+            >a {
+                display: table;
+                padding: 6px 8px;
+            }
+        }
+        .left-element, .text {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .left-element {
+            min-width: 45px;
+            height: 45px;
+            i {
+                font-size: 30px;
+                padding: 8px;
+            }
+            img {
+                width: 100%;
+                border-radius: 3px;
+            }
+        }
+        .text {
+            width: 90%;
+            padding-left: 12px;
+            .title {
+                display: block;
+                font-size: 16px;
+                color: $color-dark;
+            }
+            .subtitle {
+                color: $color-muted;
+            }
+        }
+        // SMALL LIST
+        &.list-sm {
+            ul li {
+                >a {
+                    padding: 4px 8px;
+                    .left-element {
+                        max-width: 30px;
+                        height: 30px;
+                        i {
+                            font-size: 20px;
+                            padding: 5px;
+                        }
+                    }
+                    .text {
+                        white-space: nowrap;
+                        .title {
+                            font-size: 13px;
+                            display: inline-block;
+                        }
+                        .subtitle {
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+//*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+/* HELPERS - X-ELEMENTS*/
+
+
+/*================================================*/
+
+// COLORS OPTIONS
+//================================================
+// STATES colors
+@each $state in $states-colors-list {
+    .x-#{nth($state,1)} {
+        background: #{nth($state,2)};
+        border-color: #{nth($state,2)};
+        &,
+        &.x-o {
+            &:hover,
+            &:focus,
+            &:active {
+                background: darken(nth($state, 2), 8%);
+                color: #{nth($state,3)};
+            }
+        }
+        &.x-o {
+            color: #{nth($state,2)};
+            &:hover,
+            &:focus,
+            &:active {
+                color: #{nth($state,3)};
+            }
+        }
+    }
+}
+
+// PRIMARY colors
+@each $color in $primary-colors-list {
+    .x-#{nth($color,1)} {
+        background: #{nth($color,2)};
+        border-color: #{nth($color,2)};
+        color: #{nth($color,3)};
+        &,
+        &.x-o {
+            &:hover,
+            &:focus,
+            &:active {
+                background: darken(nth($color, 2), 8%);
+                color: #{nth($color,3)};
+            }
+        }
+        &.x-o {
+            color: #{nth($color,2)};
+            &:hover,
+            &:focus,
+            &:active {
+                color: #{nth($color,3)};
+            }
+        }
+    }
+}
+
+// OutLines
+//================================================
+.x-o {
+    background: none;
+    font-weight: bold;
+    border: 1px solid;
+}

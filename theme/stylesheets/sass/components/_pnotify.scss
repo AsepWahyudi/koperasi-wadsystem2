@@ -1,0 +1,145 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* COMPONENTS - PNOTIFY*/
+/*================================================*/
+.ui-pnotify {
+    top: 15px;
+    right: 15px;
+    .ui-pnotify-container {
+        padding: 15px 15px 15px 65px;
+        border: none;
+        &.pnotify-sharp {
+            border-radius: 0px;
+        }
+        .ui-pnotify-icon {
+            width: 50px;
+            position: absolute;
+            left: 5px;
+            top: 15px;
+            margin: 0;
+            text-align: center;
+            & > span {
+                height: 40px;
+                width: 40px;
+                display: inline-block;
+                float: none;
+                margin: 0;
+                padding: 0;
+                @include font-size(26);
+                @include line-height(36);
+                border: 2px solid #FFF;
+                border-radius: 50%;
+            }
+        }
+        .ui-pnotify-title {
+            @include font-size(16);
+            font-weight: bold;
+        }
+        .ui-pnotify-text {
+            @include font-size(13);
+            @include line-height(18);
+        }
+        .ui-pnotify-closer,
+        .ui-pnotify-sticker {
+            position: absolute;
+            right: 12px;
+            top: 6px;
+        }
+        .ui-pnotify-sticker {
+            right: 26px;
+        }
+    }
+    // NO ICON
+    //================================================
+    &.pnotify-no-icon {
+        .ui-pnotify-container {
+            padding-left: 15px;
+        }
+    }
+    // TOP BAR
+    //================================================
+    &.stack-bar-top {
+        right: 0;
+        top: 0;
+    }
+    // BOTTOM BAR
+    //================================================
+    &.stack-bar-bottom {
+        margin-left: 15%;
+        right: auto;
+        bottom: 0;
+        top: auto;
+        left: auto;
+    }
+    //MODAL
+    //================================================
+    &.stack-modal {
+        width: 100% !important;
+        left: 0px !important;
+        top: 35% !important;
+        margin: 0px;
+        -webkit-transition-duration: 0.3s !important;
+        transition-duration: 0.3s !important;
+        .ui-pnotify-container {
+            padding: 30px 25% 15px 25%;
+            .ui-pnotify-title {
+                @include font-size(26);
+                @include line-height(36);
+                margin-top: 4px;
+                margin-bottom: 15px;
+            }
+            .ui-pnotify-icon {
+                top: 0;
+                left: 0;
+                position: relative;
+                margin-right: 10px;
+            }
+            .ui-pnotify-text {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    // OTHER COLORS NOTICE
+    //================================================
+    &.pnotify-primary {
+        .ui-pnotify-container.alert {
+            background: $color-primary !important;
+        }
+    }
+    &.pnotify-dark {
+        .ui-pnotify-container.alert {
+            background: $color-dark !important;
+        }
+    }
+    &.pnotify-light {
+        .ui-pnotify-container.alert {
+            background: $color-scale-0 !important;
+            color: $color-scale-3 !important;
+            .ui-pnotify-icon {
+                & > span {
+                    border-color: $color-scale-3;
+                }
+            }
+        }
+    }
+}
+
+.ui-pnotify-modal-overlay {
+    background-color: rgba(0, 0, 0, .6) !important;
+}
+
+//----------=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=------------
+// MOBILE VERSION 
+//================================================
+@media only screen and (max-width: 767px) {
+    .ui-pnotify {
+        &.stack-bar-bottom {
+            margin-left: 0px;
+            width: 100% !important;
+        }
+        &.stack-modal {
+            .ui-pnotify-container {
+                padding: 30px 10% 15px 10%;
+            }
+        }
+    }
+}

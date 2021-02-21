@@ -1,0 +1,62 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* TEMPLATE DEMOS*/
+/*================================================*/
+
+html.margin-padding {
+    .panel {
+        box-shadow: none;
+    }
+    .code {
+        display: block;
+    }
+    .box-margin {
+        border: 1px solid #fff;
+        background: #ffad72;
+        margin-bottom: 8px;
+    }
+    .box-in {
+        border: 1px solid $color-muted;
+        background: $color-scale-0;
+    }
+    .box-padding {
+        margin-bottom: 8px;
+        .box-in {
+            background: #a2fd8c;
+        }
+    }
+}
+
+.section-subtitle {
+    margin-bottom: 15px;
+}
+
+.section-text {
+    margin-top: -10px;
+}
+
+.highlight {
+    color: $color-primary;
+    font-weight: bold;
+}
+
+.img-animated {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+}
+.img-center {
+    display: block;
+    margin: auto;
+}
+
+.img-responsive {
+    display: block;
+    width: 100%;
+}
+
+.update-icon{
+    margin-top: 5px;
+    margin-right: 10px;
+    float:right;
+}

@@ -1,0 +1,109 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* HELPERS - BACKGROUNDS &  BORDERS*/
+/*================================================*/
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// BACKGROUNDS
+//================================================
+// STATES colors
+@each $state in $states-colors-list {
+    .bg-#{nth($state,1)} {
+        background: #{nth($state,2)} !important;
+    }
+}
+
+// PRIMARY colors
+@each $color in $primary-colors-list {
+    .bg-#{nth($color,1)} {
+        background: #{nth($color,2)} !important;
+    }
+}
+
+// SCALE colors
+@each $color in $scale-colors-list {
+    .bg-#{nth($color,1)} {
+        background: #{nth($color,2)} !important;
+    }
+}
+
+.bg-none {
+    background: none !important;
+}
+
+.bg-trans {
+    background: $color-trans;
+}
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// BORDERS STYLES
+//================================================
+.b-rounded {
+    border-radius: 5px;
+}
+
+.b-straight {
+    border-radius: 0px !important;
+}
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// BORDERS SIZES
+//================================================
+// ALL BORDERS
+@each $border in $thin-measure-list {
+    //xs-xl
+    .b-#{nth($border,1)} {
+        border: #{nth($border,2)} solid #ccc !important;
+    }
+}
+
+// BORDER TOP
+@each $border in $thin-measure-list {
+    .bt-#{nth($border,1)} {
+        border-top: #{nth($border,2)} solid #ccc !important;
+    }
+}
+
+// BORDER BOTTOM
+@each $border in $thin-measure-list {
+    .bb-#{nth($border,1)} {
+        border-bottom: #{nth($border,2)} solid #ccc !important;
+    }
+}
+
+// BORDER LEFT
+@each $border in $thin-measure-list {
+    .bl-#{nth($border,1)} {
+        border-left: #{nth($border,2)} solid #ccc !important;
+    }
+}
+
+// BORDER RIGHT
+@each $border in $thin-measure-list {
+    .br-#{nth($border,1)} {
+        border-right: #{nth($border,2)} solid #ccc !important;
+    }
+}
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// BORDERS COLORS
+//================================================
+// STATES colors
+@each $state in $states-colors-list {
+    .b-#{nth($state,1)} {
+        border-color: #{nth($state,2)} !important;
+    }
+}
+
+// PRIMARY colors
+@each $color in $primary-colors-list {
+    .b-#{nth($color,1)} {
+        border-color: #{nth($color,2)} !important;
+    }
+}
+
+// SCALE colors
+@each $color in $scale-colors-list {
+    .b-#{nth($color,1)} {
+        border-color: #{nth($color,2)} !important;
+    }
+}

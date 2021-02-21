@@ -1,0 +1,113 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* HELPERS - MARGINS &  PADDINGS*/
+/*================================================*/
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+//MARGIN
+//================================================
+.m-auto {
+    margin: 0 auto !important;
+}
+
+@each $margin in $measure-list {
+    .m-#{nth($margin,1)} {
+        margin: #{nth($margin,2)} !important;
+    }
+}
+
+// margin TOP
+@each $margin in $measure-list {
+    .mt-#{nth($margin,1)} {
+        margin-top: #{nth($margin,2)} !important;
+    }
+}
+
+// margin BOTTOM
+@each $margin in $measure-list {
+    .mb-#{nth($margin,1)} {
+        margin-bottom: #{nth($margin,2)} !important;
+    }
+}
+
+// margin LEFT
+@each $margin in $measure-list {
+    .ml-#{nth($margin,1)} {
+        margin-left: #{nth($margin,2)} !important;
+    }
+}
+
+// margin RIGHT
+@each $margin in $measure-list {
+    .mr-#{nth($margin,1)} {
+        margin-right: #{nth($margin,2)} !important;
+    }
+}
+
+// margin VERTICAL
+@each $margin in $measure-list {
+    .mv-#{nth($margin,1)} {
+        margin-top: #{nth($margin,2)} !important;
+        margin-bottom: #{nth($margin,2)} !important;
+    }
+}
+
+// margin HORIZONTAL
+@each $margin in $measure-list {
+    .mh-#{nth($margin,1)} {
+        margin-left: #{nth($margin,2)} !important;
+        margin-right: #{nth($margin,2)} !important;
+    }
+}
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// PADDING
+//================================================
+@each $padding in $measure-list {
+    .p-#{nth($padding,1)} {
+        padding: #{nth($padding,2)} !important;
+    }
+}
+
+// padding TOP
+@each $padding in $measure-list {
+    .pt-#{nth($padding,1)} {
+        padding-top: #{nth($padding,2)} !important;
+    }
+}
+
+// padding BOTTOM
+@each $padding in $measure-list {
+    .pb-#{nth($padding,1)} {
+        padding-bottom: #{nth($padding,2)} !important;
+    }
+}
+
+// padding LEFT
+@each $padding in $measure-list {
+    .pl-#{nth($padding,1)} {
+        padding-left: #{nth($padding,2)} !important;
+    }
+}
+
+// padding RIGHT
+@each $padding in $measure-list {
+    .pr-#{nth($padding,1)} {
+        padding-right: #{nth($padding,2)} !important;
+    }
+}
+
+// padding VERTICAL
+@each $padding in $measure-list {
+    .pv-#{nth($padding,1)} {
+        padding-top: #{nth($padding,2)} !important;
+        padding-bottom: #{nth($padding,2)} !important;
+    }
+}
+
+// padding HORIZONTAL
+@each $padding in $measure-list {
+    .ph-#{nth($padding,1)} {
+        padding-left: #{nth($padding,2)} !important;
+        padding-right: #{nth($padding,2)} !important;
+    }
+}

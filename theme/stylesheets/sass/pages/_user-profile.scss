@@ -1,0 +1,77 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* PAGES - USER PROFILE*/
+/*================================================*/
+.profile-photo {
+    max-width: 140px;
+    display: inline-block;
+    vertical-align: top;
+    img {
+        width: 100%;
+        border-radius: 3px;
+    }
+}
+
+.user-header-info {
+    display: inline-block;
+    margin-left: 20px;
+    .user-name {
+        color: $color-scale-4;
+    }
+    .user-position {
+        padding: 4px 12px;
+        display: inline-block;
+        border-radius: 3px;
+        margin-top: 0;
+        background-color: $color-primary;
+        color: #fff;
+    }
+    .user-social-media {
+        position: absolute;
+        margin-top: 5px;
+        a {
+            color: $color-muted;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+ul.user-contact-info {
+    list-style: none;
+    padding: 0;
+    > li {
+        padding: 4px 0px;
+        border-bottom: 1px solid $color-scale-1;
+        &:last-child {
+            border: none;
+        }
+    }
+}
+
+
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// MOBILE VERSION 
+//================================================
+@media only screen and (max-width: 767px) {
+    .user-header-info {
+        .user-social-media {
+            position: initial;
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .profile-photo {
+        display: block;
+        max-width: initial;
+        margin: auto !important;
+    }
+    .user-header-info {
+        margin-left: 0px;
+        .user-name {
+            margin-top: 20px;
+        }
+    }
+}

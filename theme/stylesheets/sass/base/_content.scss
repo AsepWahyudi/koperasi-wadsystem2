@@ -1,0 +1,93 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+
+/* CONTENT*/
+
+
+/*================================================*/
+
+.content {
+    @include transition-property( margin-left);
+    @include transition-duration( .25s);
+    @include transition-timing-function( ease-out);
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    // CONTENT HEADER
+    //================================================
+    .content-header {
+        background: $bg-content-header;
+        color: $color-light;
+        box-shadow: 0 2px 8px $color-scale-2;
+        .leftside-content-header, .rightside-content-header {
+            display: inline-block;
+            height: $height-content-header;
+        }
+        .leftside-content-header {
+            padding-left: 20px;
+        }
+        .rightside-content-header {
+            float: right;
+            padding-right: 20px;
+        }
+        // BREADCRUMBS
+        //================================================
+        ul.breadcrumbs {
+            list-style: none;
+            line-height: $height-content-header;
+            margin: 0px;
+            padding: 0px;
+            li {
+                display: inline-block;
+                @include font-size(15);
+                @include line-height(18);
+                vertical-align: middle;
+                &:first-child {
+                    a:before {
+                        content: none;
+                    }
+                    i {
+                        padding-right: 8px;
+                        color: $c-breadcrums-separator;
+                    }
+                }
+                a {
+                    color: $c-breadcrums-text;
+                    &:before {
+                        font-family: 'FontAwesome';
+                        content: '\f105 ';
+                        font-weight: bold;
+                        padding: 0px 6px 0px 5px;
+                        color: $c-breadcrums-icon;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// MOBILE VERSION
+// =====================================================
+@media only screen and (max-width: 767px) {
+    .content {
+        .content-header {
+            background: $bg-content-header-mobil;
+            ul.breadcrumbs {
+                li {
+                    &:first-child {
+                        i {
+                            color: $c-breadcrums-separator-mobil;
+                        }
+                    }
+                    a {
+                    color: $c-breadcrums-text-mobil;
+
+                        &:before {
+                        color: $c-breadcrums-icon-mobil;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

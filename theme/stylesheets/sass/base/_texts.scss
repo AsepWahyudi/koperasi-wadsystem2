@@ -1,0 +1,36 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* HEADINGS*/
+/*================================================*/
+h1 {
+    @include font-size($text-h1-size);
+}
+
+h2 {
+    margin-top: 15px;
+    @include font-size($text-h2-size);
+}
+
+h3 {
+    margin-top: 15px;
+    @include font-size($text-h3-size);
+}
+
+h4 {
+    @include font-size($text-h4-size);
+}
+
+h5 {
+    @include font-size($text-h5-size);
+}
+
+h6 {
+    @include font-size($text-h6-size);
+}
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* BLOCKQUOTES*/
+/*================================================*/
+blockquote {
+    @include font-size(14);
+}
+

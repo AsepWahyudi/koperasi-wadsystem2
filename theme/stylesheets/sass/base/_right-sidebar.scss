@@ -1,0 +1,86 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* RIGHT SIDEBAR */
+/*================================================*/
+.right-sidebar {
+    background: $bg-right-sidebar;
+    color: $color-dark;
+    border: 1px solid $color-scale-1;
+    .right-sidebar-toggle {
+        position: absolute;
+        top: $height-content-header;
+        left: -30px;
+        width: 30px;
+        height: 30px;
+        background-color: $color-light;
+        cursor: pointer;
+        text-align: center;
+        border-bottom-left-radius: 50%;
+        i {
+            font-size: 20px;
+            line-height: 30px;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+    .template-settings {
+        padding: 10px;
+        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        // TOGGLE TEMPLATE SETTINGS
+        //================================================
+        .toggle-settings {
+            padding: 0;
+            list-style: none;
+            li {
+                display: block;
+                margin-bottom: 5px;
+                padding-bottom: 5px;
+                border-bottom: 1px solid #f1f1f1;
+                &:last-child {
+                    border-bottom: none;
+                }
+                .text {
+                    display: inline-block;
+                }
+                .switch {
+                    float: right;
+                    margin-top: 5px;
+                }
+            }
+        }
+        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        // TOGGLE TEMPLATE COLORS
+        //================================================
+        .toggle-colors {
+            padding: 0;
+            margin: 10px;
+            margin-top: 25px;
+            list-style: none;
+            img {
+                width: 100%;
+                max-width: 50px;
+                display: block;
+                margin: auto;
+            }
+        }
+    }
+}
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// MOBILE VERSION 
+//================================================
+@media only screen and (max-width: 767px) {
+    .right-sidebar {
+        .template-settings {
+            & h4:first-child {
+                display: none;
+            }
+            .toggle-settings {
+                display: none;
+            }
+        }
+        .right-sidebar-toggle {
+            top: $height-page-header + $height-content-header;
+        }
+    }
+}

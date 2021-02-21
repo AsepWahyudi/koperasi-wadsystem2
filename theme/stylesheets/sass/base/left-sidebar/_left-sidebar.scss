@@ -1,0 +1,121 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* LEFT SIDEBAR*/
+/*================================================*/
+
+.left-sidebar {
+    background: $bg-left-sidebar;
+    color: $color-light;
+    @include transition-property( width);
+    @include transition-duration( .25s);
+    @include transition-timing-function( ease-out);
+    .nano {
+        background: $bg-left-sidebar;
+    }
+    // left-sidebar HEADER
+    //================================================
+    .left-sidebar-header {
+        position: relative;
+        height: $height-left-sidebar-header;
+        background: $bg-left-sidebar-header;
+        @include transition-property( width);
+        @include transition-duration( .25s);
+        @include transition-timing-function( ease-out);
+        .left-sidebar-title {
+            padding: 10px;
+            font-size: 10px;
+            color: $c-left-sidebar-title;
+            font-weight: bold;
+            height: $height-left-sidebar-header;
+            margin-right: $width-left-sidebar-collapsed;
+            @include transition-property( margin);
+            @include transition-duration( .25s);
+            @include transition-timing-function( ease-out);
+        }
+        .left-sidebar-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: $width-left-sidebar-collapsed;
+            height: $height-left-sidebar-header;
+            background-color: $bg-left-sidebar-toggle;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+    /* STYLE - SCROLL*/
+    /*================================================*/
+    html.scroll, html.left-sidebar-scroll {
+        .left-sidebar {
+            position: absolute;
+            .nano {
+                position: static;
+                overflow: visible;
+                .nano-content {
+                    position: static;
+                    overflow: visible;
+                    margin-right: 0 !important;
+                    outline: none;
+                }
+                .nano-pane {
+                    display: none !important;
+                }
+            }
+        }
+    }
+    /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+    /* STYLE - TOP LEFT SIDEBAR*/
+    /*================================================*/
+    html.left-sidebar-top {
+        .left-sidebar {
+            .left-sidebar-header {
+                height: $height-page-header;
+                .left-sidebar-title, .left-sidebar-toggle {
+                    height: $height-page-header;
+                }
+                .left-sidebar-title {
+                    padding: 14px 10px;
+                }
+            }
+        }
+        /*left-sidebar-top & left-sidebar-scroll & fixed header*/
+        &.fixed.left-sidebar-scroll {
+            .left-sidebar {
+                .left-sidebar-header {
+                    position: fixed;
+                    width: $width-left-sidebar-open;
+                    z-index: $index-left-sidebar-header;
+                }
+            }
+            #left-nav {
+                margin-top: $height-page-header;
+            }
+            &.left-sidebar-collapsed {
+                .left-sidebar-header {
+                    width: $width-left-sidebar-collapsed;
+                }
+            }
+        }
+    }
+    html.left-sidebar-collapsed {
+        .left-sidebar-title {
+            opacity: 0;
+        }
+    }
+}
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// MOBILE VERSION 
+//================================================
+@media only screen and (max-width: 768px) {
+    .left-sidebar {
+        .left-sidebar-header {
+            display: none;
+        }
+    }
+}
+
+

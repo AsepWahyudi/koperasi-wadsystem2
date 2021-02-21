@@ -1,0 +1,39 @@
+.badge {
+    padding: 4px 8px;
+    margin: 0 2px;
+    &.badge-xs {
+        padding: 4px 6px;
+        font-size: 10px;
+    }
+    &.badge-md {
+        padding: 5px 8px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    &.badge-lg {
+        padding: 6px 10px;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    &.badge-top-right {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+    }
+    &.badge-top-left {
+        position: absolute;
+        top: -5px;
+        left: -5px;
+    }
+    &.badge-bottom-right {
+        position: absolute;
+        bottom: -5px;
+        right: -5px;
+    }
+    &.badge-bottom-left {
+        position: absolute;
+        bottom: -5px;
+        left: -5px;
+    }
+}
+

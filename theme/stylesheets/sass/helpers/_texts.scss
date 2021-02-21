@@ -1,0 +1,156 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* HELPERS - TEXT*/
+/*================================================*/
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// COLORS CLASS
+//================================================
+// STATES colors
+@each $state in $states-colors-list {
+    .color-#{nth($state,1)} {
+        color: #{nth($state,2)} !important;
+        a {
+            color: #{nth($state,2)} !important;
+            &:hover,
+            &:active,
+            &:focus {
+                color: lighten(nth($state, 2), 10%)!important;
+            }
+        }
+    }
+}
+
+// PRIMARY colors
+@each $color in $primary-colors-list {
+    .color-#{nth($color,1)} {
+        color: #{nth($color,2)} !important;
+        a {
+            color: #{nth($color,2)} !important;
+            &:hover,
+            &:active,
+            &:focus {
+                color: lighten(nth($color, 2), 5%)!important;
+            }
+        }
+    }
+}
+
+// LIGHT-DARK colors
+@each $color in $light-dark-colors-list {
+    .color-#{nth($color,1)} {
+        color: #{nth($color,2)} !important;
+        a {
+            color: #{nth($color,2)} !important;
+            &:hover,
+            &:active,
+            &:focus {
+                color: lighten(nth($color, 2), 10%)!important;
+            }
+        }
+    }
+}
+
+// LIGHT-DARK colors
+@each $color in $scale-colors-list {
+    .color-#{nth($color,1)} {
+        color: #{nth($color,2)} !important;
+        a {
+            color: #{nth($color,2)} !important;
+            &:hover,
+            &:active,
+            &:focus {
+                color: lighten(nth($color, 2), 10%)!important;
+            }
+        }
+    }
+}
+
+.color-w {
+    color: #fff!important;
+    a {
+        color: #fff !important;
+    }
+}
+
+.color-b {
+    color: #000 !important;
+    a {
+        color: #000 !important;
+        &:hover,
+        &:active,
+        &:focus {
+            color: lighten(#000, 10%)!important;
+        }
+    }
+}
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// SIZES
+//================================================
+.text-xs {
+    @include font-size( $text-base-size - $text-size-dif);
+    @include line-height( $text-base-line-height - $text-size-dif);
+}
+
+.text-sm {
+    @include font-size( $text-base-size);
+    @include line-height( $text-base-line-height);
+}
+
+.text-md {
+    @include font-size( $text-base-size + $text-size-dif);
+    @include line-height( $text-base-line-height + $text-size-dif);
+}
+
+.text-lg {
+    @include font-size( $text-base-size + $text-size-dif + $text-size-dif);
+    @include line-height( $text-base-line-height + $text-size-dif + $text-size-dif);
+}
+
+.text-xl {
+    @include font-size( $text-base-size + $text-size-dif + $text-size-dif + $text-size-dif + $text-size-dif);
+    @include line-height( $text-base-line-height + $text-size-dif + $text-size-dif + $text-size-dif + $text-size-dif);
+}
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// STYLES
+//================================================
+.text-normal {
+    font-weight: initial !important;
+}
+
+.text-bold {
+    font-weight: bold !important;
+}
+
+.text-italic {
+    font-style: italic !important;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.ws-nowrap {
+    white-space: nowrap;
+}
+
+.code {
+    background-color: #f9f2f4;
+    color: $color-danger !important;
+    font-size: 12px !important;
+    line-height: 14px !important;
+    padding: 2px 3px;
+    font-family: monospace;
+    font-weight: initial;
+    font-style: initial;
+    text-transform: none;
+}

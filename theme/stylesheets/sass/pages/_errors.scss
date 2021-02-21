@@ -1,0 +1,52 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* PAGES - ERRORS*/
+/*================================================*/
+.error-number,
+.error-name,
+.error-text {
+    text-align: center;
+}
+
+.error-number {
+    @include font-size(130);
+    @include line-height(130);
+    color: $color-primary;
+}
+
+.error-name {
+    margin: 0px;
+}
+
+.error-text {
+    margin-top: 20px;
+    @include font-size(14);
+}
+
+html.error-500,
+html.error-404 {
+    .page-body {
+        padding: 10px;
+    }
+}
+
+html.error-500 {
+    body {
+        background: $color-primary-darker-1;
+    }
+}
+
+html.error-404 {
+    body {
+        background: $color-scale-1;
+    }
+}
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// MOBILE VERSION 
+//================================================
+@media only screen and (max-width: 767px) {
+    .error-number {
+        @include font-size(90);
+        @include line-height(90);
+    }
+}

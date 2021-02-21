@@ -1,0 +1,87 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* BUTTONS*/
+/*================================================*/
+.btn {
+    border-radius: 2px;
+    border: 1px solid transparent;
+    transition: all 0.5s ease !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    background: $color-scale-1;
+    margin-bottom: 10px;
+    &:hover {
+        background: $color-scale-2;
+    }
+    &.btn-wide {
+        min-width: 120px;
+    }
+    &.btn-o {
+        background: none;
+        font-weight: bold;
+    }
+    &.btn-transparent {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        box-shadow: transparent !important;
+        outline-color: transparent !important;
+    }
+    &.btn-loading {
+        i {
+            padding: 0px 5px;
+            position: relative;
+        }
+    }
+}
+
+.btn-group-vertical .btn {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+//----------=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=------------
+// COLORS OPTIONS ON BUTTONS
+//================================================
+// STATES colors
+@each $state in $states-colors-list {
+    .btn-#{nth($state,1)} {
+        background: #{nth($state,2)};
+        border-color: #{nth($state,2)};
+        &:hover,
+        &:focus,
+        &:active {
+            background: darken(nth($state, 2), 8%);
+            color: #{nth($state,3)};
+        }
+        &.btn-o {
+            color: #{nth($state,2)};
+            &:hover,
+            &:focus,
+            &:active {
+                color: #{nth($state,3)};
+            }
+        }
+    }
+}
+
+// PRIMARY colors
+@each $color in $primary-colors-list {
+    .btn-#{nth($color,1)} {
+        background: #{nth($color,2)};
+        border-color: #{nth($color,2)};
+        color: #{nth($color,3)};
+        &:hover,
+        &:focus,
+        &:active {
+            background: darken(nth($color, 2), 8%) !important;
+            color: #{nth($color,3)};
+        }
+        &.btn-o {
+            color: #{nth($color,2)};
+            &:hover,
+            &:focus,
+            &:active {
+                color: #{nth($color,3)};
+            }
+        }
+    }
+}

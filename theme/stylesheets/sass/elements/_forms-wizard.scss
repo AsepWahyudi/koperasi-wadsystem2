@@ -1,0 +1,247 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* FROMS - WIZARD*/
+/*================================================*/
+.form-wizard {
+    .tab-steps {
+        ul {
+            list-style: none;
+            padding: 0px;
+            li {
+                display: inline-block;
+                padding-top: 5px;
+                position: relative;
+                @include transition-property( margin);
+                @include transition-duration( .25s);
+                @include transition-timing-function( ease-out);
+                a {
+                    padding: 10px 15px;
+                    background-color: $color-scale-1;
+                    font-size: 16px;
+                    line-height: 26px;
+                    color: $color-muted;
+                    border-radius: 4px;
+                    min-width: 100px;
+                    display: block;
+                    .tab-number {
+                        margin-right: 6px;
+                        border-radius: 50%;
+                        border: 2px solid $color-muted;
+                        width: 26px;
+                        height: 26px;
+                        display: inline-block;
+                        text-align: center;
+                        vertical-align: middle;
+                        font-size: 14px;
+                        line-height: 22px;
+                    }
+                }
+                &.active {
+                    a {
+                        background: $color-primary;
+                        color: $color-primary-inverse;
+                        .tab-number {
+                            border-color: $color-scale-0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .tab-content {
+        min-height: 100px;
+        padding: 10px;
+        margin: 15px 0px;
+    }
+    .tab-buttons {
+        .next,
+        .finish {
+            float: right;
+        }
+        .finish {
+            margin-left: 10px;
+        }
+    }
+    &.wizard-block {
+        .tab-steps {
+            ul {
+                display: table;
+                width: 100%;
+                li {
+                    display: table-cell;
+                    text-align: center;
+                    padding-right: 4px;
+                    &:last-child {
+                        padding-right: 0px;
+                    }
+                }
+            }
+        }
+    }
+    &.wizard-arrows {
+        .tab-steps {
+            li {
+                min-width: 100px;
+                a {
+                    padding-right: 25px;
+                    padding-left: 10px;
+                    position: relative;
+                    height: 46px;
+                    &:before,
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: -25px;
+                        width: 0;
+                        height: 0;
+                        border-color: #ececec #ececec #ececec transparent;
+                        border-style: solid;
+                        border-width: 23px 10px 23px 20px;
+                    }
+                    &:before {
+                        border-color: $color-scale-0 $color-scale-2 $color-scale-2 transparent;
+                        left: -28px;
+                    }
+                }
+                &:first-child {
+                    a {
+                        padding-left: 25px;
+                        &:before,
+                        &:after {
+                            content: none;
+                        }
+                    }
+                }
+                &.active {
+                    a {
+                        &:after {
+                            border-color: $color-primary $color-primary $color-primary transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.wizard-icons {
+        .tab-steps {
+            ul {
+            	    height: 90px;
+                li {
+                    margin-right: 0px;
+                    a {
+                        background: none;
+                        color: $color-primary-inverse;
+                        padding: 10px 0px;
+                        .tab-icon {
+                            border-radius: 50%;
+                            border: 2px solid $color-scale-2;
+                            width: 40px;
+                            height: 40px;
+                            display: inline-block;
+                            text-align: center;
+                            font-size: 18px;
+                            line-height: 36px;
+                            position: relative;
+                            z-index: 2;
+                            background: $color-scale-2;
+                            @include transition-property(background);
+                            @include transition-duration( .5s);
+                            @include transition-timing-function( ease-out);
+                        }
+                        .tab-text {
+                            padding: 5px 15px;
+                            font-size: 12px;
+                            position: absolute;
+                            top: 50px;
+                            display: block;
+                            width: 100%;
+                            color:$color-scale-2;
+                        }
+                        &:before {
+                            content: '';
+                            border-top: 2px solid $color-scale-2;
+                            position: absolute;
+                            top: 50%;
+                            left: -50%;
+                            width: 100%;
+                        }
+                    }
+                    &:first-child {
+                        a {
+                            &:before {
+                                content: none;
+                            }
+                        }
+                    }
+                    &.validated {
+                        a {
+                            color: $color-primary-inverse;
+                            &:before {
+                                border-color: $color-primary;
+                            }
+                            .tab-icon {
+                                border-color: $color-primary;
+                                background: $color-primary;
+                            }
+                              .tab-text{
+                            	color: $color-primary;
+                            }
+                        }
+                    }
+                    &.active {
+                        a {
+                            color: $color-primary;
+                            &:before {
+                                border-color: $color-primary;
+                            }
+                            .tab-icon {
+                                border-color: $color-primary;
+                                background: $color-primary-inverse;
+                            }
+                            .tab-text{
+                            	color: $color-primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .form-wizard {
+        &.wizard-scroll-tabs,
+        &.wizard-arrows,
+        &.wizard-icons {
+            .tab-steps {
+                ul {
+                    display: block;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    li {
+                        padding-right: 0px;
+                        display: inline-block;
+                        width: 100%;
+                        &.validated {
+                            margin-left: -100%;
+                            &.active {
+                                margin-left: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.wizard-list-tabs {
+            .tab-steps {
+                ul {
+                    li {
+                        padding-right: 0px;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

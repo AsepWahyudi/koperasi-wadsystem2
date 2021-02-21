@@ -1,0 +1,20 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* ACCORDIONS*/
+/*================================================*/
+.panel-accordion {
+    border: 1px solid $color-scale-1;
+    box-shadow: none;
+    &:hover {
+        box-shadow: 1px 1px 2px $color-scale-1;
+    }
+    .panel-header {
+        padding: 0px;
+        .panel-title {
+            margin: 0px;
+            @include font-size(14);
+            @include line-height(14);
+            padding: 12px;
+            display: block;
+        }
+    }
+}

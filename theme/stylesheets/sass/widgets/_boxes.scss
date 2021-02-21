@@ -1,0 +1,117 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* WIDGETS - BOXES*/
+/*================================================*/
+.widgetbox {
+    .title {
+        font-weight: bold;
+        margin: 8px 0px;
+    }
+    .subtitle {
+        margin: 3px 0px;
+    }
+    .icon {
+        display: block;
+    }
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    // WIDGET BOX STYLE 1
+    //================================================
+    &.wbox-1 {
+        .title {
+        	margin-top: 0px;
+            @include font-size(28);
+            @include line-height(28);
+        }
+        .subtitle {
+            @include font-size(18);
+            @include line-height(18);
+        }
+    }
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    // WIDGET BOX STYLE 2
+    //================================================
+    &.wbox-2 {
+        text-align: right;
+        .title {
+            @include font-size(28);
+            @include line-height(28);
+        }
+        .subtitle {
+            @include font-size(14);
+            @include line-height(14);
+        }
+        .icon {
+            text-align: left;
+            @include font-size(60);
+        }
+    }
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    // WIDGET BOX STYLE 3
+    //================================================
+    &.wbox-3 {
+        text-align: center;
+        a {
+            color: $color-light;
+        }
+        .title {
+            @include font-size(22);
+            @include line-height(22);
+        }
+        .subtitle {
+            @include font-size(14);
+            @include line-height(14);
+            margin-bottom: 15px;
+        }
+        .numbers {
+            @include font-size(20);
+            @include line-height(20);
+            margin-bottom: 10px;
+        }
+        .icon {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            @include font-size(48);
+        }
+    }
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    // WIDGET BOX STYLE 4
+    //================================================
+    &.wbox-4 {
+        text-align: center;
+            color: $color-light;
+        a {
+            color: $color-light;
+        }
+        .title {
+            @include font-size(22);
+            @include line-height(22);
+        }
+        .subtitle {
+            @include font-size(16);
+            @include line-height(16);
+            font-weight: bold;	
+        }
+        .icon {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            @include font-size(48);
+        }
+        .owl-theme {
+            .owl-nav {
+                margin-top: 0px;
+            }
+            .owl-dots {
+                .owl-dot {
+                    span {
+                        background: $color-trans;
+                    }
+                    &.active,
+                    &:hover {
+                        span {
+                            background: $color-scale-1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

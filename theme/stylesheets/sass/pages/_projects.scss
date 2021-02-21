@@ -1,0 +1,222 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* PAGES - PROJECTS List*/
+/*================================================*/
+
+.projects-list,
+.project-detail {
+    .p-progress {
+        position: relative;
+        float: left;
+        text-align: center;
+        margin-right: 20px;
+        padding-top: 5px;
+        .value {
+            position: absolute;
+            top: 50%;
+            margin-top: -10px;
+            font-weight: bold;
+            display: block;
+            left: 0px;
+            right: 0px;
+        }
+    }
+}
+
+.projects-list {
+    .header-project-list,
+    .item-project-list {
+        text-align: center;
+        padding: 6px;
+        margin: 0px;
+    }
+    .header-project-list {
+        font-size: 12px;
+        font-weight: bold;
+        border-bottom: 2px solid $color-scale-2;
+        .h-progress {
+            float: left;
+            margin-right: 20px;
+            width: 50px;
+        }
+    }
+    .item-project-list {
+        &:nth-of-type(even) {
+            background: $color-scale-0;
+        }
+        .p-project {
+            text-align: left;
+            .p-name {
+                font-weight: bold;
+                margin-bottom: 0px;
+                font-size: 15px;
+                line-height: 18px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                color: $color-scale-4;
+            }
+            .p-update {
+                display: block;
+            }
+        }
+        .p-tags,
+        .p-options,
+        .p-deadline {
+            padding-top: 20px;
+        }
+        .p-tags {
+            .badge {
+                border-radius: 3px;
+            }
+        }
+        .p-deadline {
+            font-weight: bold;
+            &.days {
+                color: $color-danger;
+            }
+            &.weaks {
+                color: $color-warning;
+            }
+        }
+        .p-options {
+            .btn {
+                border-color: $color-scale-2;
+                padding: 6px 8px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .projects-list {
+        .header-project-list {
+            display: none;
+        }
+        .item-project-list {
+            border-bottom: 1px solid $color-scale-2;
+            .p-project {
+                height: 65px;
+            }
+            .p-tags,
+            .p-options,
+            .p-deadline {
+                padding-top: 10px;
+            }
+            .p-deadline {
+                &:before {
+                    content: 'Deadline: ';
+                    color: $color-muted;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .projects-list {
+        .item-project-list {
+            .p-project {
+                height: auto;
+                .p-progress {
+                    float: none;
+                    margin-right: 0px;
+                }
+                .p-name {
+                    white-space: initial;
+                    text-align: center;
+                }
+                .p-update {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* PAGES - PROJECTS Detail*/
+/*================================================*/
+
+.project-detail {
+    .p-data {
+        margin-left: 100px;
+        .p-name {
+            color: $color-scale-4;
+            margin-bottom: 3px;
+            font-size: 18px;
+        }
+        .p-update {
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid $color-scale-2;
+            font-size: 12px;
+        }
+        .p-status {
+            float: right;
+            margin-left: 10px;
+            .badge {
+                border-radius: 3px;
+            }
+        }
+        .p-deadline {
+            text-align: right;
+            &:after {
+                content: "|";
+                padding-left: 8px;
+            }
+        }
+    }
+}
+
+.p-info {
+    ul {
+        list-style: none;
+        padding: 0px;
+        width: 49%;
+        display: inline-block;
+        li {
+            padding: 2px 5px;
+            font-size: 14px;
+            border-bottom: 1px solid $color-scale-2;
+            &:nth-of-type(odd) {
+                background: $color-scale-0;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+    span {
+        color: $color-primary;
+        font-weight: bold;
+        font-size: 13px;
+        display: block;
+    }
+    .p-description {
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .project-detail {
+        .p-progress {
+            margin-right: 0px;
+            display: block;
+            float: none;
+        }
+        .p-data {
+            margin-left: 0px;
+            .p-name {
+                margin-bottom: 5px;
+            }
+        }
+    }
+    .p-info {
+        ul {
+            width: 100%;
+            display: block;
+        }
+    }
+}

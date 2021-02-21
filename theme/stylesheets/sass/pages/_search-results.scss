@@ -1,0 +1,45 @@
+.search-results-list {
+    padding: 10px 15px;
+    .search-item:nth-of-type(odd) {
+        background: $color-scale-0;
+    }
+    .search-item {
+        padding: 8px;
+        border-top: 1px solid #ddd;
+        &:hover {
+            background-color: $color-scale-1;
+        }
+        p {
+            line-height: 16px;
+        }
+        .search-title {
+            color: $c-text-body;
+            text-decoration: underline;
+            &:hover {
+                color: $color-primary-lighter-1;
+            }
+        }
+    }
+}
+
+.search-results-grid {
+    .search-item-content {
+        height: 200px;
+        .search-title {
+            color: $c-text-body;
+            text-decoration: underline;
+            &:hover {
+                color: $color-primary-lighter-1;
+            }
+        }
+        .text {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .badge {
+            padding: 4px 6px;
+            font-size: 10px;
+        }
+    }
+}

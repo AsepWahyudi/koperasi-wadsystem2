@@ -1,0 +1,62 @@
+ /** 
+	Set the margins of the page to 0, so the footer and the header
+	can be of the full height and width !
+ **/
+@page {
+	margin: 0.5cm 0.5cm;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/** Define now the real margins of every page in the PDF **/
+body {
+	margin-top: 2.5cm;
+	margin-left: 0.5cm;
+	margin-right: 0.5cm;
+	margin-bottom: 0.5cm;
+	font-family: Arial, Helvetica, sans-serif;
+	
+}
+
+/** Define the header rules **/
+header {
+	position: fixed;
+	top: 0cm;
+	left: 0cm;
+	right: 0cm;
+	height: 3cm;
+	
+}
+.headtitle{
+	padding-left:10px;
+	font-size:12px;
+}
+.ksptitle{
+	margin-bottom:1px;
+	margin-top:5px;
+}
+.tblbtm{
+	border-collapse:collapse;
+}
+.tblbtm td{
+	border:solid 1px #000000;
+}
+.h_tengah {text-align: center;padding: 3px;
+    line-height: 1.42857143;}
+.h_kiri {text-align: left;}
+.h_kanan {text-align: right;padding: 3px;
+    line-height: 1.42857143;}
+.txt_judul {font-size: 12pt; font-weight: bold; padding-bottom: 12px;}
+.header_kolom {background-color: #cccccc; text-align: center; font-weight: bold;padding: 3px;
+    line-height: 1.42857143;}
+.txt_content {font-size: 10pt; font-style: arial;}
+main{
+	font-size:14px;
+}
+/** Define the footer rules **/
+footer {
+	position: fixed; 
+	bottom: 0cm; 
+	left: 0cm; 
+	right: 0cm;
+	height: 2cm;
+}

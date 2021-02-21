@@ -1,0 +1,48 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* COMPONENTS - TOASTR*/
+/*================================================*/
+#toast-container > .toast {
+    background-image: none !important;
+}
+
+#toast-container > .toast:before {
+    position: fixed;
+    font-family: FontAwesome;
+    font-size: 24px;
+    line-height: 18px;
+    float: left;
+    color: #FFF;
+    padding-right: 0.5em;
+    margin: auto 0.5em auto -1.5em;
+}
+
+#toast-container > div,
+#toast-container > div:hover {
+    -moz-box-shadow: 0 0 12px $color-scale-3;
+    -webkit-box-shadow: 0 0 12px $color-scale-3;
+    box-shadow: 0 0 12px $color-scale-3;
+}
+
+#toast-container > .toast-warning:before {
+    content: "\f12a";
+}
+
+#toast-container > .toast-error:before {
+    content: "\f071";
+}
+
+#toast-container > .toast-info:before {
+    content: "\f05a";
+}
+
+#toast-container > .toast-success:before {
+    content: "\f00c";
+}
+
+.toast-success {
+    background: $color-success;
+}
+
+.toast-info {
+    background: $color-primary-darker-1;
+}

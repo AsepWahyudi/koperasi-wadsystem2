@@ -1,0 +1,22 @@
+
+
+// //PRIMARY COLORS
+// //================================================
+$color-primary: #004E90 ;	
+$color-primary-inverse:#ffffff;
+
+// Primary LIGHT VERSION
+//================================================
+$color-primary-lighter-1: lighten($color-primary, 10%);
+$color-primary-lighter-1-inverse:#ffffff;
+$color-primary-lighter-2: lighten($color-primary, 24%);
+$color-primary-lighter-2-inverse:#ffffff;
+
+// Primary DARK VERSION
+//================================================
+$color-primary-darker-1:darken($color-primary, 8%);
+$color-primary-darker-1-inverse:#ffffff;
+
+$color-primary-darker-2:darken($color-primary, 12%);
+$color-primary-darker-2-inverse:#ffffff;
+

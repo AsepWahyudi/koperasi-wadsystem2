@@ -1,0 +1,360 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[Master Stylesheet]
+
+Project:    HELSINKI
+Version:    1.0 
+author:     myii-developer 
+
+[Table of contents]
+
+1. Body
+    2. wrap
+        3. page-header
+            4. leftside-header
+            4. rightside-header
+        3. page-body
+            4. left-sidebar
+            4. content
+                5. content-header
+            4. right-sidebar
+            
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+html,
+body {
+    width: 100%;
+    font-size: $text-base-size + 0px;
+}
+
+body {
+    background: $bg-page-body;
+    margin: 0;
+    color: $c-text-body;
+    font-family: $text-primary-font-family;
+    line-height: 22px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+a {
+    color: $color-primary;
+}
+
+a:hover,
+a:focus {
+    color: lighten($color-primary, 15%);
+}
+
+a:active {
+    color: darken($color-primary, 15%);
+}
+
+a,
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none;
+}
+
+.row {
+}
+
+/* WRAPPER*/
+/*================================================*/
+.wrap {
+    min-height: 100%;
+    width: 100%;
+}
+
+/* PAGE HEADER*/
+/*================================================*/
+.page-header {
+    height: $height-page-header;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+/* PAGE BODY*/
+/*================================================*/
+.page-body {
+    display: block;
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding-top: $height-page-header;
+    float: left;
+    position:relative;
+}
+
+/*CONTENT OF THE PAGE*/
+/*================================================*/
+.content {
+    display: block;
+    position: relative;
+    vertical-align: top;
+    margin-left: $width-left-sidebar-open;
+    padding: $width-content-padding;
+    > .row + .row {
+        padding-top: 10px;
+    }
+}
+
+.content-header {
+    border-bottom: none;
+    height: $height-content-header;
+    padding: 0;
+}
+
+/* LEFT SIDEBAR*/
+/*================================================*/
+.left-sidebar {
+    display: block;
+    height: 100%;
+    float: left;
+    position: relative;
+    width: $width-left-sidebar-open;
+    z-index: $index-left-sidebar;
+}
+
+/* Left-sidebar COLLAPSE*/
+/*================================================*/
+html.left-sidebar-collapsed {
+    .content {
+        margin-left: $width-left-sidebar-collapsed;
+    }
+    .left-sidebar {
+        width: $width-left-sidebar-collapsed;
+    }
+}
+
+
+
+/* RIGHT SIDEBAR*/
+/*================================================*/
+.right-sidebar {
+    display: block;
+    height: 100%;
+    float: right;
+    position: relative;
+    width: $width-right-sidebar-opened;
+    z-index: $index-right-sidebar;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 50px;
+    top: $height-page-header;
+    margin-right: -$width-right-sidebar-opened;
+    @include transition-property( margin);
+    @include transition-duration( .25s);
+    @include transition-timing-function( ease-out);
+    @include transition-delay( 0);
+    .nano-content {
+        padding-bottom: 50px;
+    }
+}
+
+/* right-sidebar OPENED*/
+/*================================================*/
+html.right-sidebar-opened {
+    .right-sidebar {
+        margin-right: 0;
+    }
+}
+
+/* SCROLL TO TOP*/
+/*================================================*/
+    .scroll-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 40px;
+        z-index: $index-scroll-to-top;
+        height: 40px;
+        display: none;
+        border-radius: 50%;
+        text-align: center;
+        background: $color-primary;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.53);
+        i {
+            color: $color-primary-inverse;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+        }
+    }
+
+
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* STYLE - FIXED*/
+/*================================================*/
+@media only screen and (min-width: 768px) {
+    html.fixed {
+        .page-header {
+            position: fixed;
+            z-index: $index-page-header;
+        }
+        .content {
+            margin-top: $height-content-header;
+        }
+        .content-header {
+            position: fixed;
+            z-index: $index-content-header;
+            top: $height-page-header;
+            left: $width-left-sidebar-open;
+            right: 0;
+            margin: 0;
+            @include transition-property( left);
+            @include transition-duration( .25s);
+            @include transition-timing-function( ease-out);
+            @include transition-delay( 0);
+        }
+        .left-sidebar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            padding-bottom: 50px;
+            top: $height-page-header;
+            .nano-content {
+                padding-bottom: 100px;
+            }
+        }
+    
+
+        /* Fixed & Left-sidebar collapse */
+        &.left-sidebar-collapsed {
+            .content {
+                .content-header {
+                    left: $width-left-sidebar-collapsed;
+                }
+            }
+        }
+    }
+
+    /* 
+    Fixed & left-sidebar-scroll
+    left-sidebar collapse & left-sidebar-over & left-sidebar-top
+    */
+
+    html.fixed.left-sidebar-collapsed.left-sidebar-scroll.left-sidebar-over.left-sidebar-top {
+        .left-sidebar {
+            .left-sidebar-header {
+                position: initial;
+            }
+            #left-nav {
+                margin-top: initial;
+            }
+        }
+    }
+}
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* STYLE - SCROLL*/
+/*================================================*/
+@media only screen and (min-width: 768px) {
+    html.scroll,
+    html.content-header-scroll {
+        .content {
+            margin-top: 0px;
+        }
+        .content-header {
+            position: initial;
+            margin: (-$width-content-padding) (-$width-content-padding) $width-content-padding (-$width-content-padding);
+        }
+    }
+}
+
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* LEFT SIDEBAR TOP & OVER*/
+/*================================================*/
+@media only screen and (min-width: 768px) {
+
+    /* Left-sidebar OVER*/
+    /*================================================*/
+    html.left-sidebar-over {
+
+        .content {
+            margin-left: $width-left-sidebar-collapsed;
+            .content-header{
+            left: $width-left-sidebar-collapsed;
+
+            }
+        }
+    }
+    /* Left-sidebar TOP*/
+    /*================================================*/
+    html.left-sidebar-top {
+        .page-header {
+            left: $width-left-sidebar-open;
+        }
+        .left-sidebar {
+            top: 0px;
+        }
+    
+        /* left-sidebar TOP & Left-sidebar collapse */
+        &.left-sidebar-collapsed {
+            .page-header {
+                left: $width-left-sidebar-collapsed;
+            }
+            .content {
+                .content-header {
+                    left: $width-left-sidebar-collapsed;
+                }
+            }
+        }
+        /* left-sidebar TOP &  Left-sidebar OVER */
+        &.left-sidebar-over{
+            .page-header {
+                left: $width-left-sidebar-collapsed;
+            }
+            .left-sidebar{
+                z-index: $index-page-header + 1;
+            }
+        }
+    }
+
+}
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* MOBIL VERSION*/
+/*================================================*/
+@media only screen and (max-width: 767px) {
+    html {
+        .page-body {
+            min-height: 0;
+            padding-top: 0;
+            .content {
+                margin-left: 0px;
+                padding: $width-content-padding-mobil;
+            }
+            .content-header {
+                margin: (-$width-content-padding-mobil) (-$width-content-padding-mobil) $width-content-padding-mobil (-$width-content-padding-mobil);
+            }
+            .left-sidebar {
+                bottom: 0;
+                margin-left: -100%;
+                min-height: 0;
+                min-width: 100%;
+                padding-bottom: 50px;
+                position: fixed;
+                overflow: hidden;
+                top: $height-page-header;
+                @include transition-property( margin);
+                @include transition-duration( .25s);
+                @include transition-timing-function( ease-out);
+                @include transition-delay( 0);
+            }
+        }
+    }
+    html.left-sidebar-open {
+        .left-sidebar {
+            margin-left: 0;
+        }
+    }
+}

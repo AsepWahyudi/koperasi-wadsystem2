@@ -1,0 +1,11 @@
+
+@mixin font-size($size: 14) {
+	font-size: $size + px;
+	font-size: ($size / $text-base-size) + rem;
+}
+
+@mixin line-height($size: 14) {
+	line-height: $size + px;
+	line-height: ($size / $text-base-size) + rem;
+}
+

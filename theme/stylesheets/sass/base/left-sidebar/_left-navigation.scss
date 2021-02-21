@@ -1,0 +1,230 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+
+/* LEFT SIDEBAR NAVIGATION*/
+
+
+/*================================================*/
+
+ul#main-nav {
+    margin-right: 4px;
+    // MAIN ITEM (level 0)
+    //================================================
+    & > li {
+        border-bottom: 1px solid $c-left-sidebar-item-border-bottom;
+        // main item ACTIVE
+        &.active-item {
+            & > a {
+                box-shadow: 2px -1px 0 $c-left-sidebar-item-border inset !important;
+                border-bottom-left-radius: 5px;
+                background: $bg-left-sidebar-item-active;
+                color: $c-left-sidebar-item-text-active;
+                & > i {
+                    color: $c-left-sidebar-item-icon-active;
+                }
+            }
+        }
+        // main item OPEN
+        &.open-item {
+            > a {
+                color: $c-left-sidebar-item-text-open;
+                box-shadow: 0px -1px 0 $c-left-sidebar-item-border inset;
+                border-bottom-left-radius: 5px;
+                & > i {
+                    color: $c-left-sidebar-item-icon-open;
+                }
+            }
+        }
+        > a {
+            span {
+                opacity: 1;
+                @include transition-property(opacity);
+                @include transition-duration( .25s);
+                @include transition-timing-function( ease-in);
+            }
+        }
+    }
+    // ALL ITEMS
+    //================================================
+    li {
+        a {
+            padding: $width-padding-nav-level-0;
+            font-size: 13px;
+            color: $c-left-sidebar-item-text;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            cursor: pointer;
+            &:hover, &:focus {
+                background: $bg-left-sidebar-item-hover;
+            }
+            > i {
+                font-size: 18px;
+                margin-right: 10px;
+                text-align: center;
+                vertical-align: middle;
+            }
+        }
+        span {
+            vertical-align: middle;
+        }
+        // ITEM - HAS CHILDREN
+        &.has-child-item {
+            position: relative;
+            // open-close icon
+            >a:after {
+                font-family: 'FontAwesome';
+                @include font-size(10);
+                content: '\f067';
+                color: $c-left-sidebar-item-icon-subitems;
+                position: absolute;
+                padding: 14px;
+                right: 0;
+                top: 0;
+                opacity: 1;
+                @include transition-property(opacity);
+                @include transition-duration( .25s);
+                @include transition-timing-function( ease-in);
+            }
+            &.open-item {
+                & > ul {
+                    &.child-nav {
+                        display: block;
+                    }
+                }
+                & > a:after {
+                    content: '\f068';
+                }
+            }
+        }
+    }
+    // SUB-NAVIGATION levels 1-3
+    //================================================
+    ul.child-nav {
+        border-radius: 5px;
+        display: none;
+        // LEVEL 1
+        &.level-1 {
+            background: $bg-left-sidebar-level-1;
+            box-shadow: 0px -5px 5px -3px rgba(0, 0, 0, 0.6) inset;
+            li {
+                a {
+                    padding: $width-padding-nav-level-1;
+                    &:hover, &:focus {
+                        background: $bg-left-sidebar-level-1-item-hover;
+                    }
+                }
+            }
+        }
+        // LEVEL 2
+        &.level-2 {
+            background: $bg-left-sidebar-level-2;
+            box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.4) inset;
+            li {
+                a {
+                    padding: $width-padding-nav-level-2;
+                    &:hover, &:focus {
+                        background: $bg-left-sidebar-level-2-item-hover;
+                    }
+                }
+            }
+        }
+        //LEVEL 3
+        &.level-3 {
+            background: $bg-left-sidebar-level-3;
+            box-shadow: 0px 0px 0px 5px #000 inset;
+            li {
+                a {
+                    padding: $width-padding-nav-level-3;
+                    &:hover, &:focus {
+                        background: $bg-left-sidebar-level-3-item-hover;
+                    }
+                }
+            }
+        }
+        &.level-1, &.level-2, &.level-3 {
+            li {
+                &.active-item {
+                    > a {
+                        color: $c-left-sidebar-item-sublevel-text-active;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// left-sidebar COLLAPSED
+//================================================
+@media only screen and (min-width: 768px) {
+    html.left-sidebar-collapsed {
+        .left-sidebar {
+            #main-nav {
+                > li {
+                    &.open-item {
+                        > a {
+                            box-shadow: none;
+                        }
+                    }
+                    > a {
+                        overflow: hidden;
+                        text-overflow: clip;
+                        span {
+                            opacity: 0;
+                            @include transition-duration( 0.05s);
+                        }
+                    }
+                }
+                li {
+                    &.has-child-item {
+                        a:after {
+                            opacity: 0;
+                            @include transition(none);
+                        }
+                        ul.child-nav {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            // HOVER LEFT SIDEBAR COLLAPSED
+            .nano {
+                &:hover {
+                    width: $width-left-sidebar-open;
+                    min-height: 100vh;
+                    background: rgba(32, 32, 32, 0.9);
+                    #main-nav {
+                        > li {
+                            &.open-item {
+                                > a {
+                                    box-shadow: 0px -1px 0 $color-primary inset;
+                                }
+                            }
+                            > a {
+                                overflow: visible;
+                                text-overflow: initial;
+                                span {
+                                    opacity: 1;
+                                    @include transition(none);
+                                }
+                            }
+                        }
+                        li {
+                            &.has-child-item {
+                                a:after {
+                                    opacity: 1;
+                                    @include transition(none);
+                                }
+                                &.open-item {
+                                    >ul.child-nav {
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

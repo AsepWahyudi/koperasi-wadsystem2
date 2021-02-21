@@ -1,0 +1,119 @@
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/* PANELS*/
+/*================================================*/
+.panel {
+    border: none;
+    box-shadow: 1px 1px 1px $color-scale-2;
+    .panel-header,
+    .panel-footer {
+        padding: 10px 12px;
+    }
+    .panel-content {
+        padding: 12px;
+    }
+    .panel-header {
+        position: relative;
+        border-radius: 4px 4px 0px 0px;
+        border-bottom: 1px solid $color-scale-2;
+        .panel-title {
+            color: lighten($color-dark, 20%);
+            @include font-size(16);
+            font-weight: bold;
+            margin: 5px 0px;
+        }
+        .panel-subtitle {
+            color: $color-scale-4;
+            @include font-size(12);
+            margin: 0px;
+        }
+        .panel-actions {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            ul {
+                margin: 0;
+                list-style: none;
+                padding: 0;
+                li {
+                    display: inline-block;
+                    &.action {
+                        width: 25px;
+                        height: 25px;
+                        text-align: center;
+                        border-radius: 3px;
+                        cursor: pointer;
+                        color: $color-scale-4;
+                        box-shadow: 1px 1px 2px;
+                        margin-right: 2px;
+                    }
+                    &:hover {
+                        color: $color-scale-5;
+                    }
+                    span {
+                        vertical-align: middle;
+                    }
+                    &.toggle-panel {
+                        span:before {
+                            font-family: 'FontAwesome';
+                            @include font-size(10);
+                            content: '\f068';
+                        }
+                        &.panel-collapse span:before {
+                            content: '\f067';
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .panel-footer {
+        border: none;
+    }
+}
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// COLORS OPTIONS ON PANELS
+//================================================
+.panel {
+    .panel-header {
+        &.border {
+            border-width: 2px;
+            background: none !important;
+            .panel-title,
+            .panel-actions {
+                color: lighten($color-dark, 20%) !important;
+            }
+        }
+        // STATES colors
+        @each $state in $states-colors-list {
+            &.panel-#{nth($state,1)} {
+                background: nth($state, 2);
+                .panel-title,
+                .panel-actions li.action  {
+                    color: nth($state, 3);
+                }
+                .panel-actions li.action  {
+                
+                    border: 1px solid rgba(255, 255, 255, 0.24);
+                    box-shadow: 1px 1px 2px darken(nth($state, 2),20%);
+                }
+                &.border {
+                    border-color: #{nth($state,2)};
+                }
+            }
+        }
+        // PRIMARY colors
+        @each $color in $primary-colors-list {
+            &.panel-#{nth($color,1)} {
+                background: nth($color, 2);
+                .panel-title,
+                .panel-actions {
+                    color: nth($color, 3);
+                }
+                &.border {
+                    border-color: #{nth($color,2)};
+                }
+            }
+        }
+    }
+}
